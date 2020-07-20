@@ -1,0 +1,19 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+/$CACHE_FILE$
+/.generators
+/.rakeTasks
+/emacs.xml
+/forecast-rails.iml
+/inspectionProfiles/
+/libraries
+/misc.xml
+/modules.xml
+/rebar.xml
+/vcs.xml
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
