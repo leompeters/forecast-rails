@@ -47,5 +47,12 @@ group :development do
   gem 'binding_of_caller', '~> 0.8.0'
 end
 
+group :test do
+  gem 'simplecov', '~> 0.18.5'
+  gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
+  gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'master'
+  gem 'shoulda-kept-respond-with-content-type', '~> 1.1'
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

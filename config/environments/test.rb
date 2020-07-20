@@ -19,9 +19,11 @@ Rails.application.configure do
   # Configure public file server for tests with Cache-Control for performance.
   config.public_file_server.enabled = true
   # rubocop:disable Style/StringHashKeys
+  # rubocop:disable Lint/NumberConversion
   config.public_file_server.headers = {
-    'Cache-Control' => "public, max-age=#{Integer(1.hour, 10)}"
+    'Cache-Control' => "public, max-age=#{1.hour.to_i}"
   }
+  # rubocop:enable Lint/NumberConversion
   # rubocop:enable Style/StringHashKeys
 
   # Show full error reports and disable caching.

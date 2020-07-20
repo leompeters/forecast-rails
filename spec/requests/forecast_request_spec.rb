@@ -3,17 +3,21 @@
 require 'rails_helper'
 
 RSpec.describe 'Forecasts', type: :request do
-  describe 'GET /index' do
-    it 'returns http success' do
-      get '/forecast/index'
-      expect(response).to have_http_status(:success)
-    end
+  it 'render the form to search the forecast' do
+    get '/forecast'
+
+    expect(response).to have_http_status :success
+    expect(response).to render_with_layout :application
+    expect(response).to render_template :index
+    expect(response.content_type).to eq('text/html; charset=utf-8')
   end
 
-  describe 'GET /create' do
-    it 'returns http success' do
-      get '/forecast/create'
-      expect(response).to have_http_status(:success)
-    end
+  it 'retrieve forecast data for the given address' do
+    post '/forecast'
+
+    expect(response).to have_http_status :created
+    expect(response).to render_with_layout :application
+    expect(response).to render_template :index
+    expect(response.content_type).to eq('text/html; charset=utf-8')
   end
 end
