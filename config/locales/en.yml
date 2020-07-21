@@ -30,4 +30,15 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  title: "Forecast in Rails"
+  forecast:
+    index:
+      address: "Address"
+      city: "City"
+      state: "State"
+      zip: "ZIP"
+      country: "Country"
+      search: "Search"
+      searching_: "Searching..."
+      searched: "Searched!"
+

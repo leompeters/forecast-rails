@@ -3,13 +3,16 @@
 class ForecastController < ApplicationController
   # GET /forecast
   # GET /forecast.js
-  # GET /forecast.json
   def index
-  end
-
-  # POST /forecast
-  # POST /forecast.js
-  # POST /forecast.json
-  def create
+    respond_to do |format|
+      format.html
+      format.js do
+        @forecast = Forecast.search(params[:city], params[:state],
+                                    params[:zip], params[:country])
+        render 'index.js.erb'
+      end
+    end
+  # TODO: rescue StandardError => e
+  #   Rails.logger.error e.message
   end
 end

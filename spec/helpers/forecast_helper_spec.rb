@@ -12,6 +12,7 @@ require 'rails_helper'
 #     end
 #   end
 # end
+# See:: https://relishapp.com/rspec/rspec-rails/docs/helper-specs/helper-spec
 RSpec.describe ForecastHelper, type: :helper do
   pending "add some examples to (or delete) #{__FILE__}"
 end

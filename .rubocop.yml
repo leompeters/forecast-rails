@@ -1214,3 +1214,15 @@ Style/DisableCopsWithinSourceCodeDirective:
 Style/Copyright:
   Description: 'Include a copyright notice in each file before any code.'
   Enabled: false
+
+Layout/FirstMethodArgumentLineBreak:
+  Description: >-
+                Checks for a line break before the first argument in a
+                multi-line method call.
+  Enabled: false
+
+Layout/MultilineMethodArgumentLineBreaks:
+  Description: >-
+                 Checks that each argument in a multi-line method call
+                 starts on a separate line.
+  Enabled: false
