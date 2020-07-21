@@ -1,6 +1,6 @@
 {
   "name": "forecast_rails",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Example of rails app for forecast API integration.",
   "private": true,
   "author": {
