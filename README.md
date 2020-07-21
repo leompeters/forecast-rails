@@ -1,6 +1,6 @@
 # Forecast in Rails
 
-[![Analytics](https://ga-beacon.appspot.com/UA-115755453-3/forecast-rails?flat)](https://github.com/leompeters/forecast-rails "Forecast in Rails")
+[![Analytics](https://ga-beacon.appspot.com/UA-25165099-7/forecast-rails?flat)](https://github.com/leompeters/forecast-rails "Forecast in Rails")
 
 This repo is an example on how to create a Ruby on Rails app to consume
 a forecast API.
