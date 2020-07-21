@@ -13,21 +13,29 @@ class Forecast
         country = 'us' if country&.empty?
         url = BASE_URL
         url += zip.present? ? by_zip(zip, country) : by_city(city, state, country)
-        url += "&appid=#{Rails.application.credentials.open_weather_api_key}&mode=html"
+        url += "&units=imperial&appid=#{Rails.application.credentials.open_weather_api_key}"
 
         call_external_api(url)
       end
+
+      # TODO: Disabling it here because there is no way to flush cache with `Rails.cache.delete(['zip', zip])`
+      # at this moment in this model. Fragment cache is working on the view.
+      # def cached_search(city, state, zip, country)
+      #   Rails.cache.fetch(['zip', zip], expires_in: 30.minutes) do
+      #     search(city, state, zip, country)
+      #   end
+      # end
 
       private
 
       # Set up Open Weather API params using city name.
       def by_zip(zip, country)
-        [zip, country].join(',')
+        "zip=#{[zip, country].join(',')}"
       end
 
       # Set up Open Weather API params using zip code.
       def by_city(city, state, country)
-        [city, state, country].join(',')
+        "q=#{[city, state, country].join(',')}"
       end
 
       def call_external_api(url)
@@ -45,7 +53,8 @@ class Forecast
         headers.each { |key, value| request.add_field key, value }
         # Fetch Request.
         response = http.request(request)
-        html_parse(response&.body)
+        # html_parse(response&.body)
+        ActiveSupport::JSON.decode response&.body
       end
 
       def html_parse(bpdy)

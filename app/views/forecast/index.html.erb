@@ -1,5 +1,13 @@
-<h1>Forecast in Rails</h1>
-
+<h1>
+  Forecast in Rails&nbsp;
+  <i data-feather="cloud-drizzle"></i>
+  <i data-feather="cloud-lightning"></i>
+  <i data-feather="cloud-rain"></i>
+  <i data-feather="cloud-snow"></i>
+  <i data-feather="cloud"></i>
+  <i data-feather="sun"></i>
+  <i data-feather="wind"></i>
+</h1>
 <%= form_with url: root_path, method: :get,
               id: 'forecast_search', remote: true do %>
   <div class="form-row">
@@ -33,4 +41,6 @@
                          complete_text: t('.searched')} %>
 <% end %>
 
-<div id="forecast_result"><%= render 'index' %></div>
+<% cache ['zip', params[:zip]], skip_digest: true do %>
+  <div id="forecast_result" class="m-t-15"><%= render 'index' %></div>
+<% end %>

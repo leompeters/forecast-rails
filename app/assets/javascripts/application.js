@@ -10,4 +10,6 @@ $(document).ready(function() {
   $('body').tooltip({ selector: '.tooltip,[rel=tooltip],[data-toggle=tooltip]' });
   // Focus on the first visible field of the first form.
   $('form:first input[type!="hidden"]:first').focus();
+
+  feather.replace()
 });

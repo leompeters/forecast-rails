@@ -1,0 +1,20 @@
+GET https://api.openweathermap.org/data/2.5/weather?q=32751,us&appid={{open_weather_api_key}}&mode=html
+Accept: application/json
+
+###
+
+GET https://api.openweathermap.org/data/2.5/forecast?zip=32751,us&units=imperial&appid={{open_weather_api_key}}
+Accept: application/json
+
+###
+
+GET https://api.openweathermap.org/data/2.5/forecast/daily?zip=32751&appid={{open_weather_api_key}}
+Accept: application/json
+
+###
+#    ?lat=33.441792
+#    &lon=-94.037689
+GET https://api.openweathermap.org/data/2.5/onecall?zip=32751,us&exclude=minutely,hourly&appid={{open_weather_api_key}}
+Accept: application/json
+
+###

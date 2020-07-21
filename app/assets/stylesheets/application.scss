@@ -17,3 +17,8 @@
 body {
   margin-top: 20px;
 }
+
+// margin-top: 0..200px
+@for $i from 0 through 40 {
+  .m-t-#{$i * 5} { margin-top: #{$i * 5}px !important; }
+}
