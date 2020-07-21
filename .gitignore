@@ -31,3 +31,9 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+# Editor-based HTTP Client requests
+http-client.private.env.json
+
+coverage/
+
