@@ -32,6 +32,9 @@ gem 'dalli', '~> 2.7', '>= 2.7.10'
 
 gem 'bootstrap', '~> 4.5'
 
+# TODO: Remove this when upgrade Ruby version.
+gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
